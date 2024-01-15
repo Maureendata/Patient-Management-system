@@ -1,0 +1,60 @@
+/* profile.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+
+}
+
+.container{
+    background-color:#fff;
+    max-width:500px;
+    margin:50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    border:4px groove black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);   
+    padding-top:40px;     
+    margin-top:30px;
+ 
+}
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+.profile{
+    width:85%;
+    float:right;
+}
+.profile-item {
+    margin-bottom: 15px;
+}
+.profile-item strong {
+    font-weight: bold;
+    margin-right: 5px;
+    color: #333;
+}
+.profile-item p {
+    margin: 0;
+    color: #555;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    padding:25px;
+    
+  }
+  
+   td {
+    text-align: left;
+    padding: 25x;
+    height:50px;
+
+  }
+
+  
+  tr:nth-child(even) {background-color: #0e0d0d;
+color:white;}

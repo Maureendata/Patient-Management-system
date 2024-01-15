@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+.doctor{
+    width:85%;
+    float:right;
+    background-color:white;
+}
+.container {
+    max-width: 95%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);    
+    padding-top:40px;
+    padding: 20px;
+    background-color: #fff;
+    
+    color:black; 
+}
+h2,h3{
+    text-align: center;
+    color: #333;
+}
+.card{   
+    width: 40%;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    height:250px;
+}
+.title {
+    color: black;
+    font-size: 18px;
+    font-weight:bold;
+  }
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  .card img {
+    width: 60%;    
+    height:100px;
+    border-radius:4px;
+    
+}

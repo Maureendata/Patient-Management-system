@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Patient Login</title>
+</head>
+<body>
+
+<div class="container">
+    <h2>Patient Login</h2>
+    <form action="login.php" method="POST">
+        <label for="login_email">Email Address:</label>
+        <input type="email" id="login_email" name="login_email" required>
+
+        <label for="login_password">Password:</label>
+        <input type="password" id="login_password" name="login_password" required>
+        <div class="form-links" >
+            <div style="padding:15px;">
+        
+            <a href="forgot_password.php" style="float:right;">Forgot Password?</a>
+</div>
+     
+            <button type="submit">Login</button>
+            
+        </div>
+
+
+    <p style="text-align:center;">Don't have an account, <a href="reg.html">sign up</a>.</p>
+</div>
+</form>
+
+</body>
+</html>
