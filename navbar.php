@@ -3,8 +3,8 @@
 include_once('cookies.php');
 include_once('session.php');
 $patient_id = isset($_SESSION['loggedin']) ? $_SESSION['loggedin'] : null;
- $user_id= $_SESSION['user_id'];
- $sql = "SELECT * 
+$user_id= $_SESSION['user_id'];
+$sql = "SELECT * 
  FROM  patients  
  WHERE patients.patient_id = $user_id";
 

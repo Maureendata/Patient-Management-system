@@ -1,6 +1,7 @@
 <?php
 //Database connection
 include("session.php");
+
 $errors=[];
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
@@ -44,9 +45,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     $stmt->bind_param("ssssssss",$name,$phone,$speciality,$doctor,$date,$time,$comments,$patient_id);
    $result= $stmt->execute();
    if($result)
-   {
-    header("Location: dashboard.php");
+   { 
+    echo '<script>alert("Appointment added successfully!");</script>';
+    echo '<script>window.location.href = "dashboard.php";</script>';   
     exit();
+   
    }
    else{
     echo "Error: " . $stmt->error ?? "Unknown error";

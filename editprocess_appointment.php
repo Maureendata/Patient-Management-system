@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($errors)) {
         $stmt = $conn->prepare("UPDATE appointments SET name=?, phone=?, speciality=?, 
         doctor=?, date=?, time=?, comments=? WHERE appointment_id=?");
+        
        $stmt->bind_param("sssssssi", $name, $phone, $speciality, $doctor, $date, $time, 
         $comments, $appointment_id);
 
@@ -33,7 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result) {
     //echo "Records updated successfully the new comment is".$comments;
         
-           header("Location: dashboard.php");
+    echo '<script>alert("Appointment updated successfully!");</script>';
+    echo '<script>window.location.href = "dashboard.php";</script>';   
+  
             exit();
         } else {
             echo "Error: " . $stmt->error ?? "Unknown error";

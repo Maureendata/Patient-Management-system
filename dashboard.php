@@ -46,10 +46,10 @@ $result = $conn->query($sql);
                     echo "<td>{$row['date']}</td>";
                     echo "<td>{$row['time']}</td>";
                     echo "<td>{$row['comments']}</td>";
-                    echo "<td>&nbsp&nbsp&nbsp<a href='edit_appointment.php' class='btn btn-info btn-lg' 
+                    echo "<td>&nbsp&nbsp&nbsp<a href='edit_appointment.php?id={$row['appointment_id']}' class='btn btn-info btn-lg' 
                     style='border-radius:50%; padding:4px;'>
                         <span class='glyphicon glyphicon-pencil'></span>
-                      </a> &nbsp&nbsp&nbsp<a href='delete_appointment.php' class='btn btn-info btn-lg' 
+                      </a> &nbsp&nbsp&nbsp<a href='delete_appointment.php?id={$row['appointment_id']}' class='btn btn-info btn-lg' 
                       style='border-radius:50%;padding:4px;'>
                       <span class='glyphicon glyphicon-trash'></span>
                     </a>

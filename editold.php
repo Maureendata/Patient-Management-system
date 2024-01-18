@@ -1,57 +1,51 @@
 
 <?php
 session_start();
-include("navbar.php");
-
-
-$patient_id = isset($_SESSION['loggedin']) ? $_SESSION['loggedin'] : null;
-$user_id = $_SESSION['user_id'];
-
-if ($patient_id && isset($_GET['id'])) {
-    $appointmentId = $_GET['id'];
-
-
-
-    // Fetch appointment details using the appointment ID
-    $sql = "SELECT appointments.*, patients.* 
-            FROM appointments
-            LEFT JOIN patients ON appointments.patient_id = patients.patient_id
-            WHERE patients.patient_id = $user_id AND appointments.appointment_id = $appointmentId";
-
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        // Fetch the appointment details
-        $row = $result->fetch_assoc();
-        ?>
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="appointmentstyles.css" type="text/css">
-    <title>Delete Appointment</title>
+    <title>Appointment Module</title>
 </head>
 <body>
-
+<?php
+    include("navbar.php"); 
+    
+    ?>
     <div class="appointment">
-        <div class="container">   
-           
+        <div class="container">        
         <h2>Appointment Request</h2>
         
         <form action="deleteprocess_appointment.php" method="POST">
+        <?php
+        // Database connection
+       
+       if ($patient_id) {
+            // Fetch appointments for a specific person using the patient_id
+            $sql = "SELECT appointments.*, patients.* 
+        FROM appointments
+        LEFT JOIN patients ON appointments.patient_id = patients.patient_id where 
+        patients.patient_id=$user_id";
+        
 
-      
+$result = $conn->query($sql);
+
+       }
+          ?>   
           
 <table>
        <tr> <td><label for="name">Your Name:</label></td>
         
         
        <td><?php
-                 
-            echo $row['name'];
-                              
+        if($result->num_rows>0)
+        {
+            $row = $result->fetch_assoc();
+            echo $row['firstname'];
+                }               
         ?> </td></tr>
         <tr>
 <td><label>Phone number</label></td>
@@ -80,26 +74,21 @@ if ($patient_id && isset($_GET['id'])) {
             </tr>
             <tr>
                 <td colspan="2">
-                <input type="number" name="appointment_id" value="<?php echo $row['appointment_id']; ?> hidden">
+                <input type="hidden" name="appointment_id" value="<?php echo $row['appointment_id']; ?>">
             </td>
             </tr>
 
-        </table>            
 
-        <button type="submit" onclick="confirmDelete()">Delete Appointment</button>   
+        </table>          
+       
+
         
-
+        <button type="submit">Delete Appointment</button>
 
 </form>
+
 </div>
 </div>
 
 </body>
 </html>
-<?php
-    } else {
-        echo "Appointment not found.";
-    }
-} else {
-    echo "Patient ID or Appointment ID not provided.";
-}

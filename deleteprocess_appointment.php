@@ -19,7 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result) {
             // Redirect to the dashboard after successful deletion
-            header("Location: dashboard.php");
+            echo '<script>alert("Appointment deleted successfully!");</script>';
+    echo '<script>window.location.href = "dashboard.php";</script>';   
             exit();
         } else {
             echo "Error: " . $stmt->error ?? "Unknown error";

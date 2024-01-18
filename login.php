@@ -27,7 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Replace 'user_id' with the actual column name for user ID in your table
             $_SESSION['loggedin']=true;
             $_SESSION['user_id'] = $row['patient_id'];
-            header("Location: dashboard.php"); // Redirect to the dashboard or any other page
+            echo '<script>alert("Login successfully!");</script>';
+            echo '<script>window.location.href = "dashboard.php";</script>';
+           // echo '<script>window.alert("Login successfully!");</script>';
+            //header("Location: dashboard.php"); // Redirect to the dashboard or any other page
           
         //} else {
            //echo "Incorrect password";

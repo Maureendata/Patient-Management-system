@@ -89,6 +89,7 @@ $result = $conn->query($sql);
        <label for="comments">Additional Comments:</label>
         <textarea id="comments" name="comments" rows="4"></textarea>
         <button type="submit">Submit Appointment</button>
+        
 
 </form>
 
